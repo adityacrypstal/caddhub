@@ -1,0 +1,170 @@
+body
+{ 
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position:center;
+background-size:cover;}
+h1,h2{font-family: 'Yatra One', cursive;}
+p{ font-family: 'Quicksand', sans-serif;}
+#mahn_text{opacity:0.6;padding:20px;
+    padding-left:0;margin-bottom:50px;
+    line-height:30px;text-align:left;}
+
+.mahn_box{height:80vh;padding:20px;}
+.header{color:white;opacity:0.8;
+    padding-top:200px;
+    letter-spacing:3px;
+    font-family: 'Yatra One', cursive;
+    }
+
+#internship{height:60px;}
+#internship .col{text-align:center;
+    padding:10px;
+    padding-top:20px;}
+#internship .col {color:white;
+    font-weight:bolder;
+    letter-spacing:2px;}
+.intern_one{background-color:rgb(112, 113, 114);}
+.intern_two{background-color:rgb(116, 133, 138);}
+.intern_three{background-color:rgb(7, 84, 107);}
+#landing_page{height:100vh;
+/* background-image:url('images/landing_wall.jpg'); */
+        background-repeat:no-repeat;padding-top:-6px;}
+.gradient{background:linear-gradient( rgba(0, 0, 0, 0.5),rgba(112, 61, 61, 0.5));
+width:100%;height:100%;}
+section{height:100vh;}
+#background{background-color:rgb(240, 238, 238);
+    transform-origin: top right;
+    transform: skewY(-3deg);
+    margin-top:-100px;
+    z-index: 1;padding-top:40px;
+}
+#background2{
+    transform-origin: top right;
+    transform: skewY(3deg);
+    padding:80px;
+    font-size:15px;
+    word-spacing:6px;
+    line-height:23px;
+}
+.nav-item a{font-family: 'Cabin Sketch', cursive;color:rgb(224, 85, 4);}
+#background p{
+    text-align:left;
+    padding-top:20px;
+    opacity:0.6;}
+.padded{
+    padding:25px;
+    padding-left:45px;
+    padding-right:45px;
+    background-color:rgba(151, 146, 146, 0.767);
+    color:white;
+    font-variant:small-caps;}
+ .card{
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  font-size:12px;
+}
+.card p{padding:8px;margin-top:-30px;}
+.card li{list-style-type: square; padding:1px }
+.one{font-size:15px;}
+.two{font-size:12px;}
+.three{font-size:14px;}
+.four{font-size:9px;}
+
+.card:hover {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.mahn::before { 
+    content: "a";
+    background-color:grey;color:grey;
+    font-weight: bold;
+}
+
+#about{background-color:rgb(219, 218, 218);height:120vh;padding-top:100px;}
+#courses{height:150vh;}
+.about_us{
+    background-color:rgba(256,256,256,0.7);
+    margin:40px;
+    padding:60px;}
+.about_us_p{padding:25px;line-height:28px;}
+#checking{
+    background-image:url("images/parall.png");
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;}
+#checking{padding:70px;height:80vh}
+.out{height:250px;width:100px
+    ;position:absolute;
+    background-color:rgba(151, 151, 151,    0.6);}
+.ins{height:30px;
+    width:40%;
+    background-color:rgb(255, 250, 250);
+    position:absolute;
+    padding:3px;
+    font-weight:bold;letter-spacing:2px;z-index:1;
+    margin-left:-60px;
+    /* margin-right:-60px; */
+    margin-top:-20px;border-radius:0px;}
+   
+  
+form{padding:20px;}
+#maps{height:500px;}
+#contacts{height:190vh;}
+#contacts p{text-align:center;}
+#contact .col{padding:10px;margin:30px;}
+hr{ height: 10px;
+    border: 5px;
+    
+border-radius: 5px;width:100px;
+    background-color:rgb(46, 37, 37);
+    padding-top:3px;
+    }
+    .one1,.two2{border-right:2px solid rgba(0,0,0,0.2);}
+    .contact,.contact_header{margin-top:50px;font-family: 'Cabin Sketch', cursive;}
+    /*Contact Form Starts her*/
+ 
+/*Contact form ends here*/
+.navbar-nav{background-color:#f8f9fa!important;padding-left:7   0px;}
+#contact-form{background:url('images/contact.jpg');
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position:center;
+background-size:cover;padding:30px;height:120vh;}
+input,textarea,select{background-color:rgba(104, 100, 100, 0.6);
+border:none;padding:13px;top:10px;position:relative;opacity:0.6;width:100%;}
+input::placeholder{color:white;}
+input:focus,textarea:focus{outline:none;}
+textarea{color:white;padding:20px;}
+.contact_button{background-color:grey;color:white;width:100%;padding:50px;font-size:20px;}
+@media (max-width: 576px) {
+    #mission{height:185vh;}
+    #courses{margin-top:0px;height:400vh;}
+    .mahn_img{width:100%;
+    margin-top:-7px;margin-bottom:10px;} 
+    .mahn_box{margin-bottom:80px;height:120vh;}
+    .card{margin:40px;margin-left:70px;}
+    #about{height:175vh;}
+    .ins{padding-left:60px;}
+     #contacts{height:200vh;}
+    #checking{padding:60px;height:50vh;}
+    textarea{padding:20px;}
+#landing_page{height:35vh;}
+    
+}
+@media only screen and (max-width: 900px) and (min-width: 578px){  
+
+#mission{height:180vh;}
+#courses{margin-top:0px;height:450vh;}
+.mahn_img{width:100%;
+margin-top:-10px;margin-bottom:30px;} 
+.about_us{margin:20px;}
+.mahn_box{margin-bottom:0px;height:160vh;}
+/* .card{margin:7px;} */
+#about{height:185vh;}
+.ins{padding-left:200px;margin-top:-17px;width:10%;margin-left:-2px;}
+.contact{margin-top:10px;}
+#checking{padding:60px;height:80vh;}
+textarea{padding:20px;}
+#contacts{height:300vh;}
+#contact-form{height:250vh;}
+}

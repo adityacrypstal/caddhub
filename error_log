@@ -1,0 +1,3 @@
+[03-Jun-2018 09:19:14 UTC] PHP Parse error:  syntax error, unexpected 'logo' (T_STRING), expecting ',' or ';' in /home/sopeteltech2016/public_html/www.caddhub.in/application/views/welcome_message.php on line 26
+[05-Dec-2018 14:22:52 UTC] PHP Parse error:  syntax error, unexpected '.', expecting '}' in /home/sopeteltech2016/public_html/www.caddhub.in/application/controllers/Admin.php on line 25
+[05-Dec-2018 14:30:18 UTC] PHP Parse error:  syntax error, unexpected 'mail' (T_STRING) in /home/sopeteltech2016/public_html/www.caddhub.in/application/controllers/Admin.php on line 34
