@@ -1,3 +1,3 @@
 <?php
-echo"aditya"
+echo"aditya";
 ?>
