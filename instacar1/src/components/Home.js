@@ -22,7 +22,10 @@ class Welcome extends Component {
                 {"id":1,"name":"Dijo","age":32,"rate":16,"language":"Tamil"},
                 {"id":2,"name":"Samson","age":44,"rate":13,"language":"Kannada"},
                 {"id":3,"name":"Ashik","age":26,"rate":11,"language":"Tamil"},
-                {"id":4,"name":"Ranveer","age":30,"rate":16,"language":"Kannada"}]
+                {"id":4,"name":"Ranveer","age":30,"rate":16,"language":"Kannada"}],
+            filters:'',
+            driversList : []
+
         };
     }
 
@@ -31,6 +34,12 @@ class Welcome extends Component {
             startDate: date
         });
     };
+    componentDidMount() {
+        this.setState({
+            driversList : this.state.drivers
+        })
+    }
+
     formSubmit = () =>{
         if(this.state.from == ""){
             swal("Oops!","Please Select Pickup Point","error")
@@ -45,9 +54,41 @@ class Welcome extends Component {
         let selected = this.state.place.filter(data => data.id == this.state.to)
         return parseInt(rate*selected[0].distance)
     }
-    responseGoogle = (response) => {
-        console.log(response);
+    profile = () =>{
+        if(localStorage.getItem('icuser')){
+
+            let profile = JSON.parse(localStorage.getItem('icuser'))
+            return(
+                <div>
+                   <h1> Hello, {profile.name}</h1>
+                </div>
+            )
+        }else{
+            return( <GoogleLogin
+                clientId="41842724806-ljqhugqns90nsu5ms9da8srku52rimjr.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={this.responseGoogle}
+                onFailure={()=>{swal("Oops!","Please Select Pickup Point","error")}}
+                cookiePolicy={'single_host_origin'}
+            />)
+        }
+
     }
+    responseGoogle = (response) => {
+        console.log(response)
+        localStorage.setItem('icuser', JSON.stringify(response.profileObj))
+    }
+   filter = (value) =>{
+        if(value != ''){
+            let lists  = this.state.drivers.filter((data)=>data.language == value);
+            this.setState({driversList : lists})
+        }else{
+            this.setState({
+            driversList :this.state.drivers
+            })
+        }
+
+   }
     render() {
         switch(this.state.page){
             case 1:
@@ -116,7 +157,18 @@ class Welcome extends Component {
                                 <h1>Select Driver
                                 </h1>
                                 <div className="row">
-                                    {this.state.drivers.map((data,key) => {return(
+                                   <div md="3">
+                                       <Form.Control as="select" onChange={e => this.filter(e.target.value)}>
+                                           <option value="" >Language</option>
+                                           <option value="Malayalam">Malayalam</option>
+                                           <option value="Tamil">Tamil</option>
+                                           <option value="Kannada">Kannada</option>
+                                       </Form.Control>
+                                   </div>
+                                </div>
+                                <br/>
+                                <div className="row">
+                                    {this.state.driversList.map((data,key) => {return(
                                             <Col md="4" style={{marginBottom:"10px"}} key={{key}}>
                                                 <Card style={{ width: '18rem' }}>
                                                     <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTt2OeS8bJu0U55outPHYA1axKvgzYzhP_jWKKZSH7ZK4domdFa" />
@@ -160,13 +212,7 @@ class Welcome extends Component {
                                 <h1>Select Driver
                                 </h1>
                                 <div className="row">
-                                    <GoogleLogin
-                                        clientId="41842724806-ljqhugqns90nsu5ms9da8srku52rimjr.apps.googleusercontent.com"
-                                        buttonText="Login"
-                                        onSuccess={this.responseGoogle}
-                                        onFailure={this.responseGoogle}
-                                        cookiePolicy={'single_host_origin'}
-                                    />
+                                    {this.profile()}
                                 </div>
 
                             </div>
