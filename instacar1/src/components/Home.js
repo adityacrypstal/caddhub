@@ -5,6 +5,7 @@ import { Navbar,Nav,NavDropdown,Form,FormControl,Button,Col, Card } from 'react-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import swal from 'sweetalert';
+import axios from 'axios' ;
 import GoogleLogin from 'react-google-login';
 class Welcome extends Component {
     constructor() {
@@ -40,14 +41,17 @@ class Welcome extends Component {
         })
     }
 
-    formSubmit = () =>{
+    formSubmit = async () =>{
         if(this.state.from == ""){
             swal("Oops!","Please Select Pickup Point","error")
         }else if(this.state.to == ""){
             swal("Oops!","Please Select Dropping Point","error")
         }else{
-            console.log("next");
-            this.setState({page:2})
+            let data = await axios.get('http://localhost:4000/read');
+            console.log(data.data)
+            if(data.data){
+                this.setState({page:2,drivers:data.data,driversList:data.data})
+            }
         }
     }
     total = (rate)=>{
